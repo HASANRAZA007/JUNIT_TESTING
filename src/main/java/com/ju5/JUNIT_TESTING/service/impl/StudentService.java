@@ -78,11 +78,12 @@ public class StudentService implements IStudentService {
     @Override
     public void deleteStudent(long studentId) {
         Student student=studentRepository.getReferenceById(studentId);
-        if(student!=null){
-            studentRepository.delete(student);
+        if(student==null){
+            throw new NoSuchElementException("Data not exist");
+
         }
         else {
-            throw new NoSuchElementException("Data not exist");
+            studentRepository.delete(student);
         }
     }
 }

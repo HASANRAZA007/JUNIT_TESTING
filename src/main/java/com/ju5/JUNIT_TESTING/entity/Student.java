@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -23,4 +24,8 @@ public class Student {
     private int age;
     @Column(name ="department",nullable = false)
     private String department;
+
+    public Student() {
+
+    }
 }
